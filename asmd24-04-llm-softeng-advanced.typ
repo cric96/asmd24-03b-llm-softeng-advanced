@@ -1,8 +1,13 @@
 #import "@preview/touying:0.6.1": *
+<<<<<<< HEAD
 #import themes.metropolis: *
+=======
+#import "themes/theme.typ": *
+>>>>>>> 78f22f7 (update the base for 2025)
 #import "@preview/fontawesome:0.6.0": *
 #import "@preview/ctheorems:1.1.3": *
 #import "@preview/numbly:0.1.0": numbly
+#import "utils.typ": *
 
 // Pdfpc configuration
 // typst query --root . ./example.typ --field value --one "<pdfpc-file>" > ./example.pdfpc
@@ -35,7 +40,7 @@
 #let example = thmplain("example", "Example").with(numbering: none)
 #let proof = thmproof("proof", "Proof")
 
-#show: metropolis-theme.with(
+#show: theme.with(
   aspect-ratio: "4-3",
   footer: self => self.info.author + ", " + self.info.institution + " - " + self.info.date,
   config-common(
@@ -371,13 +376,13 @@ _From: Machine Learning for Software Engineering: A Tertiary Study_
 ]
 == A Copilot is all you need -- Test generation
 #align(center)[
-  #image("test-generation.png", width: 80%)
+  #image("figures/test-generation.png", width: 80%)
 ]
 *Note!*: Are we sure we want test generation to be demanded to Copilot?
 
 == A Copilot is all you need -- API Documentation
 #align(center)[
-  #image("documentation-generation.png", width: 100%)
+  #image("figures/documentation-generation.png", width: 100%)
 ]
 == A Copilot is all you need -- Code Review 
 #align(center)[
