@@ -1,6 +1,6 @@
 // This theme is inspired by https://github.com/matze/mtheme
 // The origin code was written by https://github.com/Enivex
-#import "@preview/touying:0.6.2": *
+#import "@preview/touying:0.6.1": *
 
 /// Default slide function for the presentation.
 ///
@@ -114,42 +114,58 @@
     self,
     config,
     config-common(freeze-slide-counter: true),
-    config-page(fill: self.colors.neutral-lightest),
+    config-page(fill: self.colors.neutral-lightest, margin: 0pt),
   )
   let info = self.info + args.named()
   let body = {
-    set text(fill: self.colors.neutral-darkest)
-    set std.align(horizon)
-    block(
-      width: 100%,
-      inset: 2em,
-      {
-        components.left-and-right(
-          {
-            text(size: 1.3em, text(weight: "medium", info.title))
-            if info.subtitle != none {
-              linebreak()
-              text(size: 0.9em, info.subtitle)
-            }
-          },
-          text(2em, utils.call-or-display(self, info.logo)),
-        )
-        line(length: 100%, stroke: .05em + self.colors.primary)
-        set text(size: .8em)
-        if info.author != none {
-          block(spacing: 1em, info.author)
+    grid(
+      columns: (0.0fr, 4fr),
+      rows: 100%,
+      block(
+        width: 100%,
+        height: 100%,
+        fill: gradient.linear(self.colors.secondary, self.colors.primary, angle: 50deg),
+        inset: 2em,
+        {
+          set std.align(bottom + left)
+          if info.logo != none {
+            text(2em, utils.call-or-display(self, info.logo))
+          }
         }
-        if info.date != none {
-          block(spacing: 1em, utils.display-info-date(self))
+      ),
+      block(
+        width: 100%,
+        height: 100%,
+        inset: 3em,
+        {
+          set std.align(horizon + left)
+          set text(fill: self.colors.neutral-darkest)
+          text(size: 2.5em, weight: "bold", fill: self.colors.primary, info.title)
+          if info.subtitle != none {
+            v(0.2em)
+            text(size: 1.5em, fill: self.colors.neutral-dark, info.subtitle)
+          }
+          v(1em)
+          line(length: 100%, stroke: .05em + self.colors.primary)
+          v(1em)
+          set text(size: 1em)
+          if info.author != none {
+            block(spacing: 1em, text(weight: "medium", size: 1.2em, info.author))
+          }
+          if info.at("email", default: none) != none {
+            block(spacing: 1em, text(size: 0.9em, fill: self.colors.primary, info.email))
+          }
+          if info.institution != none {
+            block(spacing: 1em, text(size: 1em, style: "italic", info.institution))
+          }
+          if info.date != none {
+            block(spacing: 1em, text(size: 0.9em, utils.display-info-date(self)))
+          }
+          if extra != none {
+            block(spacing: 1em, extra)
+          }
         }
-        set text(size: .8em)
-        if info.institution != none {
-          block(spacing: 1em, info.institution)
-        }
-        if extra != none {
-          block(spacing: 1em, extra)
-        }
-      },
+      )
     )
   }
   touying-slide(self: self, body)
@@ -285,12 +301,12 @@
       alert: utils.alert-with-primary-color,
     ),
     config-colors(
-      primary: rgb("#827081"),
-      primary-light: rgb("#b7d1d6"),
-      secondary:  rgb("#23373b"),
-      neutral-lightest: rgb("#fafafa"),
-      neutral-dark: rgb("#23373b"),
-      neutral-darkest: rgb("#23373b"),
+      primary: rgb("#005587"),
+      primary-light: rgb("#d9e8f5"),
+      secondary:  rgb("#003f66"),
+      neutral-lightest: rgb("#ffffff"),
+      neutral-dark: rgb("#333333"),
+      neutral-darkest: rgb("#111111"),
     ),
     // save the variables for later use
     config-store(
