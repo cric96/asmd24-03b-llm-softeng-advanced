@@ -64,9 +64,12 @@
 == Today's Lesson: LLMs in Software Engineering
 
 *Learning Objectives:*
-- _Understand_ the impact of LLMs on modern software development.
-- _Explore_ practical applications across the development lifecycle.
-- _Examine_ ethical considerations and limitations.
+- #underline[Understand] the impact of LLMs on modern software development.
+  - _Explore_ how LLMs may/have transformed software engineering practices.
+- #underline[Understand] the architecture of LLM-based tools for AI-assisted software development.
+
+- #underline[Underpin] guidelines for effectively using LLMs in an AI-assisted scenarios
+  - TDD process, ad-hoc prompt, guidelines, context engineering, etc.
 
 *Key Applications We'll Cover:*
 - AI-assisted software development
@@ -77,8 +80,58 @@
 #v(1em)
 #underline[*Note:*] This field is evolving rapidly—_concepts matter more than specific implementations_ #fa-lightbulb()
 
-== Machine Learning for Software Engineering
+= Introduction - The need of 'smartness' in Code Development
 
+== Pre LLM Era - Intellisense and Code Analysis Tools
+- Developing code is hard, and we have been trying to make it easier for decades.
+- Early tools focused on _syntax highlighting_, _code completion_, and _static analysis_.
+- THis is what was called as "Intellisense" - a set of features that provide basic code assistance.
+- IDE features like auto-completion, error detection, and refactoring tools have been around for a long time.
+
+== Pre LLM Era - Limitations of Traditional Tools
+- Code completion, despite may be also based on machine learning,
+  - Often limited to syntax and simple patterns
+  - Lacked deep understanding of code semantics
+  - Struggled with complex codebases and context
+  - Provided generic suggestions that may not fit specific needs
+
+== Why LLMs matter in the context of Code?
+- LLMs may have been seen as the ''one'' whose can close the sematic gap/abstraction 
+between human language/problem space and the solution space.
+- Why?
+  - The LLMs can understnad both natural language and code, allowing them to bridge the gap between human intent and code generation.
+- How?
+ - Thanks to their training on vast amounts of code and language data, LLMs can learn complex patterns and relationships in code, enabling them to generate more accurate and context-aware suggestions.
+ - They have a deep understainding of programming languages, but they also understand the intent
+ - They can also been seen as a "one-model-for-all" solution
+
+== SDLC pipeline
+a software development lifecycle (SDLC) pipeline is a structured process that guides the development of software applications from initial concept to deployment and maintenance. It typically consists of several phases, including:
+- ''Plan'':
+- ''Create''.
+
+== Planning with LLMs
+
+== Creating with LLMs - AI-asistend tools
+> Deinfition of ai-assisted ttols
+> defintion of ai pari progrmaming 
+> defintion of vibe coding
+
+== Level of Autonomy in AI-aiassted tools
+
+== On AI Agents
+
+== Copilot -- A Case Study in LLMs for Software Development
+
+== Inside the Pilot -- RAG 
+
+== Steer the Pilot -- prompts
+
+== Steer the Pilot -- context engineering
+
+== Recent trends 
+
+/*
 #grid(
   columns: (1fr, 1fr),
   gutter: 2em,
@@ -121,7 +174,7 @@
   [#align(center)[*One-model-for-all*]],
   [#align(center)[*Context-aware*]],
   [#align(center)[*Human-level performance*]]
-)
+)*/
 == LLM in SE -- Areas of Application
 
 #v(1em)
