@@ -78,129 +78,50 @@
 #underline[*Note:*] This field is evolving rapidly—_concepts matter more than specific implementations_ #fa-lightbulb()
 
 == Machine Learning for Software Engineering
-#focus-slide()[
-  #align(center)[
-    #text(size: 28pt, weight: "bold")[Machine Learning for Software Engineering]
-    
-    #v(1em)
-    
-    #text(size: 20pt)[
-      Application of machine learning #emph[techniques] and #emph[methodologies] to address challenges and solve problems in the field of software engineering
-    ]
-    
-    #v(1em)
-    
-    #image("figures/pubblication-over-year.png", width: 70%)
-  ]
-]
-
-== Machine Learning for Software Engineering
-
-Machine Learning has been increasingly adopted in Software Engineering to improve productivity, quality, and maintainability. We can categorize its application by asking *Why* and *When* we use it.
 
 #grid(
   columns: (1fr, 1fr),
   gutter: 2em,
   [
-    #underline[*Why?*]
+    #underline[*Why ML in SE?*]
     #v(0.5em)
-    - *Automation:* automate repetitive tasks (e.g., code generation).
-    - *Prediction:* predict software quality, bugs, and performance.
-    - *Optimization:* optimize software development processes.
-    - *Understanding:* understand software artifacts and processes.
-    - *Personalization:* personalize software development tools.
+    - *Automation:* repetitive tasks (e.g., code generation)
+    - *Prediction:* bugs, quality, and performance
+    - *Understanding:* software artifacts and processes
+    - *Personalization:* development tools
   ],
   [
     #underline[*When?*]
     #v(0.5em)
-    - *Requirement Engineering:* requirements elicitation and analysis.
-    - *Design:* design patterns, architecture, and modeling.
-    - *Implementation:* code generation, refactoring, and bug fixing.
-    - _*Testing:*_ test case generation, fault prediction, ...
-    - *Maintenance:* bug prediction, code review, ...
+    - *Requirements:* elicitation and analysis
+    - *Implementation:* generation, refactoring, bug fixing
+    - *Testing:* test case generation, fault prediction
+    - *Maintenance:* bug prediction, code review
   ]
 )
 
-== Machine Learning for Software Engineering -- Overview
-
-  #align(center)[
-    #image("figures/distrubution.png", width: 90%)
-  ]
-_From: Machine Learning for Software Engineering: A Tertiary Study_
-
-
-== Early approaches -- Supervised Learning
-
-#example[
-  #text(weight: "bold")[Coderf Summarization (CodeNN)#footnote(link("https://github.com/sriniiyer/codenn"))]
-  
-  #align(center)[
-    #image("figures/codenn.png", width: 80%)
-  ]
-]
-
-== Early approaches -- Supervised Learning
-
-#example[
-  #text(weight: "bold")[Malware Detection#footnote("Cui, Z., Xue, F., Cai, X., Cao, Y., Wang, G., & Chen, J. (2018). Detection of Malicious Code Variants Based on Deep Learning. IEEE Trans. Ind. Informatics, 14(7), 3187–3196. doi:10.1109/TII.2018.2822680")]
-  
-  #align(center)[
-    #image("figures/malware-detection.png", width: 80%)
-  ]
-]
-
-== Early approaches -- Supervised Learning
-
-#example[
-  #text(weight: "bold")[Code Review -- Deep Review#footnote("Li, H.-Y., Shi, S.-T., Thung, F., Huo, X., Xu, B., Li, M., & Lo, D. (2019). DeepReview: Automatic Code Review Using Deep Multi-instance Learning. In Q. Yang, Z.-H. Zhou, Z. Gong, M.-L. Zhang, & S.-J. Huang (Eds.), Advances in Knowledge Discovery and Data Mining - 23rd Pacific-Asia Conference, PAKDD 2019, Macau, China, April 14-17, 2019, Proceedings, Part II (pp. 318–330). doi:10.1007/978-3-030-16145-3_25")]
-  
-  #align(center)[
-    #image("figures/deep-review.png", width: 60%)
-  ]
-]
-
-== Early approaches -- Unsupervised Learning
-
-#example[
-  #text(weight: "bold")[Code Completion (kNN)#footnote("Bruch, M., Monperrus, M., & Mezini, M. (2009). Learning from examples to improve code completion systems. In H. van Vliet & V. Issarny (Eds.), Proceedings of the 7th joint meeting of the European Software Engineering Conference and the ACM SIGSOFT International Symposium on Foundations of Software Engineering, 2009, Amsterdam, The Netherlands, August 24-28, 2009 (pp. 213–222). doi:10.1145/1595696.1595728")]
-  
-  #align(center)[
-    #image("figures/code-completions.png", width: 80%)
-  ]
-]
-
-== Early approaches -- Pitfalls
-
-While early machine learning approaches showed promise, they faced significant limitations that hindered their widespread adoption in software engineering.
-
-#v(1em)
-#underline[*Key Pitfalls:*] #fa-exclamation-circle()
 #v(0.5em)
-- *Data scarcity:* software engineering data is scarce and expensive to collect, posing challenges for training effective models.
-- *Single-task models:* many models are designed for _specific_ tasks, limiting their broader _applicability_ and _reuse_.
-- *Lack of generalization:* models often fail to _generalize_ across different software projects and domains.
-- *Human-computer interaction:* Early models did not adequately consider human factors, impacting _usability_ and _adoption_ in software development practices.
+#underline[*Early Pitfalls* #fa-exclamation-circle()]
+#v(0.3em)
+#grid(
+  columns: (1fr, 1fr, 1fr, 1fr),
+  gutter: 0.5em,
+  [#align(center)[_Data scarcity_]],
+  [#align(center)[_Single-task models_]],
+  [#align(center)[_Poor generalization_]],
+  [#align(center)[_Limited HCI_]]
+)
 
-== Towards LLM solutions
-
-Large Language Models offer a paradigm shift, addressing many of the limitations of earlier approaches by providing general-purpose, context-aware capabilities.
-
-#v(1em)
-#underline[*Why LLMs?*]
 #v(0.5em)
-- *Code understanding*: LLMs, correctly trained, can understand code and its context.
-- *Code-Language link*: LLMs can link code to natural language, improving _documentation_ and _understanding_.
-- *Session support*: LLMs can support developers during coding sessions, providing _hints_ and _suggestions_.
-- *Testing support*: LLMs can generate _test cases_ and _fault prediction_.
-- *One-model-for-all*: LLMs can be used for _multiple_ tasks, reducing the need for _task-specific_ models.
-- *Personalization*: LLMs can be personalized to the developer's _style_ and _needs_.
-- *Human-level performance*: LLMs can achieve human-level performance in _specific_ tasks.
-
-== Human-level performance
-#align(center)[
-  #image("figures/can-ai-code.png", width: 100%)
-]
-#link("https://huggingface.co/spaces/mike-ravkine/can-ai-code-results")
+#underline[*Why LLMs overcome these limits?*]
+#v(0.3em)
+#grid(
+  columns: (1fr, 1fr, 1fr),
+  gutter: 0.5em,
+  [#align(center)[*One-model-for-all*]],
+  [#align(center)[*Context-aware*]],
+  [#align(center)[*Human-level performance*]]
+)
 == LLM in SE -- Areas of Application
 
 #v(1em)
