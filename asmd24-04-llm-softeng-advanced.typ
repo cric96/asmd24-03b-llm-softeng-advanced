@@ -206,18 +206,18 @@ The way developers use AI exists on a *spectrum* of control and rigor:
   
   // Row 3: Bullet points
   [
-    - Chat-based iterations: describe $arrow.r$ generate $arrow.r$ run $arrow.r$ re-describe
+    - #underline[Chat-based iterations]: describe $arrow.r$ generate $arrow.r$ run $arrow.r$ re-describe
     - The code is a *"black box"*—you evaluate if it "works," not _how_
     - Rapid validation of ideas, MVPs, glue code
     - Typically *solo*; the developer is a _prompt artist_
-    - Risk: _technical debt_ and _fragile codebases_
+    - *Risk*: _technical debt_ and _fragile codebases_
   ],
   [
     - AI creativity is bounded by _specifications and constraints_
     - Developer #underline[reviews], #underline[refines], and #underline[owns] every line
     - Systematic and iterative: TDD, context engineering, prompt discipline
-    - Team-based: developer acts as *architect and technical lead*
-    - Risk: overhead of review and process discipline
+    - *Team*-based: developer acts as *architect and technical lead*
+    - *Risk*: overhead of review and process discipline
   ]
 )
 
@@ -375,7 +375,7 @@ Programming is evolving from *imperative* ("How do I do X?") to *declarative/int
       #v(0.5em)
       Developer writes _every line_
       #v(0.3em)
-      Focus: *syntax and implementation*
+      #underline[Focus]: *syntax and implementation*
       #v(0.3em)
       Skill: typing code correctly
     ]
@@ -389,7 +389,7 @@ Programming is evolving from *imperative* ("How do I do X?") to *declarative/int
       #v(0.5em)
       Developer _specifies what_ they want
       #v(0.3em)
-      Focus: *clarity of specification*
+      #underline[Focus]: *clarity of specification*
       #v(0.3em)
       Skill: articulating intent precisely
     ]
@@ -422,8 +422,8 @@ Programming is evolving from *imperative* ("How do I do X?") to *declarative/int
     #text(fill: rgb("#16a34a"))[+ Full IDE ecosystem preserved]
     #text(fill: rgb("#16a34a"))[+ Non-invasive, portable]
     #v(0.2em)
-    #text(fill: rgb("#dc2626"))[-- Limited by IDE APIs]
-    #text(fill: rgb("#dc2626"))[-- AI features can feel secondary]
+    - #text(fill: rgb("#dc2626"))[Limited by IDE APIs]
+    - #text(fill: rgb("#dc2626"))[AI features can feel secondary]
   ],
   [
     #align(center)[#underline[*2. AI-Native IDEs*]]
@@ -436,8 +436,8 @@ Programming is evolving from *imperative* ("How do I do X?") to *declarative/int
     #text(fill: rgb("#16a34a"))[+ Advanced agentic features]
     #text(fill: rgb("#16a34a"))[+ Seamless AI-first UX]
     #v(0.2em)
-    #text(fill: rgb("#dc2626"))[-- Editor lock-in]
-    #text(fill: rgb("#dc2626"))[-- Less mature ecosystems]
+    - #text(fill: rgb("#dc2626"))[Editor lock-in]
+    - #text(fill: rgb("#dc2626"))[Less mature ecosystems]
   ],
   [
     #align(center)[#underline[*3. Web-Based*]]
@@ -450,8 +450,8 @@ Programming is evolving from *imperative* ("How do I do X?") to *declarative/int
     #text(fill: rgb("#16a34a"))[+ Zero setup, multi-device]
     #text(fill: rgb("#16a34a"))[+ Instant deploy and sharing]
     #v(0.2em)
-    #text(fill: rgb("#dc2626"))[-- Web dev focus, privacy concerns]
-    #text(fill: rgb("#dc2626"))[-- Not suited for large projects]
+    - #text(fill: rgb("#dc2626"))[Web dev focus, privacy concerns]
+    - #text(fill: rgb("#dc2626"))[Not suited for large projects]
   ]
 )
 
@@ -575,7 +575,7 @@ Different models serve different purposes—*model selection is a developer skil
   [
     #align(center)[#underline[*Key Features*]]
     #v(0.5em)
-    - Real-time code suggestions #fa-lightbulb()
+    - Real-time code suggestions
     - Context-aware assistance (RAG-based)
     - Inline chat, full chat, and agent mode
     - IDE integration (VS Code, JetBrains, Neovim)
@@ -601,6 +601,7 @@ Different models serve different purposes—*model selection is a developer skil
     #align(center)[#underline[*Retrieval*]]
     #v(0.3em)
     - Embed the #underline[user query]
+      - E.g., "How do I implement feature X?" or "What does this function do?"
     - Perform #underline[similarity searches]
     - Rank results by #underline[relevance]
     - Select the #underline[top-$k$] code snippets
@@ -669,7 +670,7 @@ We illustrate each level through *GitHub Copilot*, which spans the entire spectr
     - `Ctrl+Right` to accept _partially_ (word by word)
     - `F1` $arrow.r$ _Open Completions Panel_ to see *alternatives*
     - Best for: boilerplate, standard patterns, known idioms
-    - Limitation: #underline[local context only]—no project-wide awareness
+    - Limitation: *context window* and *limited project awareness* (and no "natural language" interaction)
   ]
 )
 
@@ -690,8 +691,7 @@ We illustrate each level through *GitHub Copilot*, which spans the entire spectr
     #align(center)[#underline[*Predefined Commands & Full Chat*]]
     #v(0.5em)
     - `/doc` $arrow.r$ generate documentation
-    - `/test` $arrow.r$ create unit tests
-    - `/explain` $arrow.r$ natural-language explanation
+    - `/tests` $arrow.r$ create unit testsù
     - `/fix` $arrow.r$ correct errors
     - Full chat supports `#`-mentions: `#file`, `#codebase`, `#selection`, `#fetch`
   ]
@@ -725,7 +725,7 @@ We illustrate each level through *GitHub Copilot*, which spans the entire spectr
     - Navigates and searches the codebase
     - Performs *web search* and fetches docs
     - Coordinates *multi-file edits*
-    - Custom _chat modes_ (`.github/chatmodes/`) for specialized personas (planning, TDD, review)
+    - Custom _agents_ (`.github/agents/`) for specialized use cases (planning, TDD, review)
   ]
 )
 
@@ -794,7 +794,7 @@ We illustrate each level through *GitHub Copilot*, which spans the entire spectr
 #underline[*Key Shift — From Copilot to Agent:*]
 - Interactive copilots _wait for a prompt_; background agents _receive a goal and work independently_
 - Introduces _"cognitive overload"_ for the reviewer—large PRs from agents can be harder to audit than human code
-- Requires clear *context engineering* (architecture docs, contributing guidelines) to steer agent behavior
+- Both Level 2 and 3 require clear *context engineering* (architecture, guidelines) to *steer* agent behavior
 
 == The Copilot Journey — L0 to L3 at a Glance
 
@@ -992,7 +992,7 @@ Testing is the ultimate act of #underline[ownership]—it locks down behavior an
     #v(0.5em)
     - Test each function/module individually
     - Cover edge cases the AI likely missed
-    - You can ask AI to _generate_ tests—but #underline[review them]
+    - You can ask AI to _generate_ tests—but using them as a basis and then #underline[review them]
     - Human intuition for creative edge cases remains valuable
   ],
   [
@@ -1016,7 +1016,7 @@ Testing is the ultimate act of #underline[ownership]—it locks down behavior an
   _Once you've tested and fixed any issues, the code is #underline[yours]—you understand it, trust it, and have tests to guard it._
 ]
 
-= Context Engineering for AI-Assisted Programming
+= Prompt Engineering for AI-Assisted Programming
 
 
 == Effective Prompting Strategies
@@ -1072,8 +1072,9 @@ We have already seen some of these aspects in previous slides, but the core prin
 #grid(
   columns: (1fr, 1fr),
   gutter: 2em,
+  align: top,
   [
-    #align(center)[#underline[*Without Context Engineering*]]
+    #align(center)[#underline[*Without* Context Engineering]]
     #v(0.5em)
     - AI generates _generic_ code
     - Does not respect project conventions
@@ -1082,7 +1083,7 @@ We have already seen some of these aspects in previous slides, but the core prin
     - Repeated back-and-forth to correct
   ],
   [
-    #align(center)[#underline[*With Context Engineering*]]
+    #align(center)[#underline[*With* Context Engineering]]
     #v(0.5em)
     - Code #underline[aligned to the project]
     - Respects patterns and conventions
@@ -1126,7 +1127,8 @@ Contextual prompting is the _in-prompt_ dimension of context engineering—provi
 
 == Context Engineering — The Workflow
 
-A three-step, iterative process:
+Copilot (so each project may follow a different context engineering appraoch)
+  A three-step, iterative process:
 
 #v(0.5em)
 #grid(
