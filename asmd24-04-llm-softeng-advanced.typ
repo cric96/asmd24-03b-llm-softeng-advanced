@@ -1161,6 +1161,7 @@ Copilot (so each project may follow a different context engineering appraoch)
   ]
 )
 
+
 == Copilot Customization — Context Engineering in Practice
 
 Copilot customization layers are the _practical implementation_ of context engineering — they make project knowledge *persistent, structured, and automatic*:
@@ -1189,6 +1190,9 @@ Copilot customization layers are the _practical implementation_ of context engin
     - _Maps to:_ *Implement with AI* — #underline[orchestrate agents] with the right tools
   ]
 )
+
+
+#text(size: 16pt)[For some examples, take a look at the #link("https://github.com/github/awesome-copilot")]
 
 == The Golden Rules of AI-Assisted Development
 
@@ -1231,6 +1235,7 @@ Best practices distilled from professional teams using AI tools.
 #grid(
   columns: (1fr, 1fr),
   gutter: 2em,
+  align: top,
   [
     #align(center)[#underline[*Technical Challenges*]]
     #v(0.5em)
